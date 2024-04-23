@@ -27,10 +27,10 @@ function renderDSNV(dsnv) {
                             <td>${nv.loaiNV()}</td>
                             <td>
                             <button
-                            onclick="xoaNV(${nv.taiKhoan})"
+                            onclick="xoaNV('${nv.taiKhoan}')"
                             class='btn btn-danger'>Xoá</button>
                             <button
-                            onclick="suaNV(${nv.taiKhoan})"
+                            onclick="suaNV('${nv.taiKhoan}')"
                             class='btn btn-dark'
                             data-toggle="modal"
                             data-target="#myModal">Sửa</button>
