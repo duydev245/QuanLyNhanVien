@@ -27,6 +27,7 @@ function resetForm() {
     document.getElementById('btnThemNV').disabled = false;
 }
 
+
 function themNV() {
     var nv = layThongTinTuForm();
 
@@ -60,6 +61,7 @@ function themNV() {
     }
 }
 
+
 function xoaNV(taiKhoan) {
     var index = dsnv.findIndex((item) => {
         return item.taiKhoan == taiKhoan;
@@ -92,6 +94,7 @@ function xoaNV(taiKhoan) {
     });
 }
 
+
 function suaNV(taiKhoan) {
     var index = dsnv.findIndex((item) => {
         return item.taiKhoan == taiKhoan;
@@ -114,6 +117,7 @@ function suaNV(taiKhoan) {
     document.getElementById('btnThemNV').disabled = true;
 }
 
+
 function capNhatNV() {
     var nv = layThongTinTuForm();
 
@@ -134,7 +138,6 @@ function capNhatNV() {
     // Valid gioLam
     isValid = kiemTraRong(nv.gioLam, 'tbGiolam') && kiemTraSoGioLam(nv.gioLam, 'tbGiolam') & isValid;
 
-
     if (isValid) {
         var index = dsnv.findIndex((item) => {
             return item.taiKhoan == nv.taiKhoan;
@@ -151,3 +154,12 @@ function capNhatNV() {
         document.getElementById('btnDong').click();
     }
 }
+
+
+function searchNV() {
+    const searchValue = document.getElementById('searchName').value.toLowerCase();
+    const filteredNV = dsnv.filter(nv => nv.loaiNV().toLowerCase().includes(searchValue));
+
+    renderDSNV(filteredNV);
+}
+

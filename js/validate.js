@@ -10,6 +10,7 @@ function kiemTraRong(value, idErr) {
     return true;
 }
 
+
 function kiemTraSoKiTu(value, idErr, min, max) {
     if (min <= value.length && value.length <= max) {
         document.getElementById(idErr).innerText = "";
@@ -20,6 +21,7 @@ function kiemTraSoKiTu(value, idErr, min, max) {
     document.getElementById(idErr).style.display = 'inline-block';
     return false;
 }
+
 
 function kiemTraHoTen(value, idErr) {
     const regex = /^[a-zA-Z\s]+$/;
@@ -34,6 +36,7 @@ function kiemTraHoTen(value, idErr) {
     return false;
 }
 
+
 function kiemTraEmail(value, idErr) {
     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var isEmail = regex.test(value);
@@ -46,6 +49,7 @@ function kiemTraEmail(value, idErr) {
     document.getElementById(idErr).style.display = 'inline-block';
     return false;
 }
+
 
 function kiemTraMatKhau(value, idErr) {
     const regexSo = /\d/;
@@ -63,6 +67,7 @@ function kiemTraMatKhau(value, idErr) {
     return false;
 }
 
+
 function kiemTraNgayLam(value, idErr) {
     const regexNgay = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
 
@@ -76,6 +81,7 @@ function kiemTraNgayLam(value, idErr) {
     document.getElementById(idErr).style.display = 'inline-block';
     return false;
 }
+
 
 function kiemTraLuongCoBan(value, idErr) {
     const regexLuong = /^([1-9]\d{6}|1\d{7}|20000000)$/;
@@ -91,6 +97,7 @@ function kiemTraLuongCoBan(value, idErr) {
     return false;
 }
 
+
 function kiemTraSoGioLam(value, idErr) {
     const regexSoGio = /^(8\d|9\d|1\d{2}|200)$/;
 
@@ -104,17 +111,4 @@ function kiemTraSoGioLam(value, idErr) {
     document.getElementById(idErr).style.display = 'inline-block';
     return false;
 }
-
-/**
- * Validation
-+ Tài khoản tối đa 4 - 6 ký số, không để trống
-+ Tên nhân viên phải là chữ, không để trống
-+ Email phải đúng định dạng, không để trống
-+ mật Khẩu từ 6-10 ký tự (chứa ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt), không
-để trống
-+ Ngày làm không để trống, định dạng mm/dd/yyyy
-+ Lương cơ bản 1 000 000 - 20 000 000, không để trống
-+ Chức vụ phải chọn chức vụ hợp lệ (Giám đốc, Trưởng Phòng, Nhân Viên)
-+ Số giờ làm trong tháng 80 - 200 giờ, không để trống
- */
 
